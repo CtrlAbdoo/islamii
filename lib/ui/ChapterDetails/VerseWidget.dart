@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ChapterDetails/ChapterDetailsScreen.dart';
 
 class VerseWidget extends StatelessWidget {
   String content;

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ChapterDetails/ChapterDetailsScreen.dart';
-import 'package:islami/home.dart';
-import 'package:islami/sebha/sebha_screen.dart';
+import 'package:islami/ui/ChapterDetails/ChapterDetailsScreen.dart';
+import 'package:islami/ui/hadethDetalies/hadethDetailesScreen.dart';
+import 'package:islami/ui/home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
       routes: {
         home.routeName: (_) => home(),
         ChapterDetailsScreen.routeName: (_) => ChapterDetailsScreen(),
-        //'sebha':(_)=> SebhaScreen()
+        hadethDetailesScreen.routeName: (_) => hadethDetailesScreen(),
       },
       initialRoute: home.routeName,
     );

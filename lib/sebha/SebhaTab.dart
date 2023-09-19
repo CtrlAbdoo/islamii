@@ -46,7 +46,7 @@ class _SebhaTabState extends State<SebhaTab> {
               child: Center(
                 child: GestureDetector(
                   onTap: () {
-                    _rotateImage(); // Rotate the image on tap
+                    _rotateImage();
                     addTesbih(count);
                   },
                   child: Transform.rotate(

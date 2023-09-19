@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:islami/ChapterDetails/VerseWidget.dart';
+import 'package:islami/ui/ChapterDetails/VerseWidget.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
   static const String routeName = 'ChapterDetailsScreen';
