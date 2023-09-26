@@ -4,6 +4,8 @@ import 'package:islami/hadeth/HadethTab.dart';
 import 'package:islami/quran/QuranTab.dart';
 import 'package:islami/radio/RadioTab.dart';
 import 'package:islami/sebha/SebhaTab.dart';
+import 'package:islami/settings/SettingsTab.dart';
+import 'package:islami/ui/MyThemeDat.dart';
 
 class home extends StatefulWidget {
   static const String routeName = 'home';
@@ -24,7 +26,9 @@ class _homeState extends State<home> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('Islami'),
+        title: Text('Islami', style: TextStyle(
+          color: Theme.of(context).colorScheme.onPrimary
+        ),),
       ),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (index){
@@ -51,13 +55,21 @@ class _homeState extends State<home> {
               backgroundColor: Theme.of(context).primaryColor,
               icon: ImageIcon(AssetImage('assets/images/icon_radio@3x.png')),
               label: 'Radio'),
+          BottomNavigationBarItem(
+              backgroundColor: Theme.of(context).primaryColor,
+              icon: Icon(Icons.settings),
+              label: 'Settings'),
         ],
       ),
       body: Stack(
         fit: StackFit.expand,
         children: [
           Image(
-            image: AssetImage('assets/images/darkbg.png'),
+            image: AssetImage(
+                MyThemeData.isDarkEnabled?
+                'assets/images/bg.jpg':
+                'assets/images/bg3.jpg'
+            ),
             fit: BoxFit.fill,
           ),
           Column(
@@ -77,6 +89,7 @@ class _homeState extends State<home> {
     QuranTab(),
     HadethTab(),
     SebhaTab(),
-    RadioTab()
+    RadioTab(),
+    SettingsTab(),
   ];
 }

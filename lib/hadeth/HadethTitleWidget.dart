@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ui/ChapterDetails/ChapterDetailsScreen.dart';
+import 'package:islami/hadeth/Hadeth.dart';
+import 'package:islami/ui/hadethDetalies/hadethDetailesScreen.dart';
 
-class ChapterTitleWidget extends StatelessWidget {
-  String title;
-  int index;
+class HadethTitleWidget extends StatelessWidget {
+    Hadeth hadeth;
 
-  ChapterTitleWidget(this.title,this.index);
+  HadethTitleWidget(this.hadeth);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: (){
-        Navigator.of(context).pushNamed(ChapterDetailsScreen.routeName,
-        arguments: ChapterDetailsArgs(title,index)
+        Navigator.of(context)
+            .pushNamed(hadethDetailesScreen.routeName,
+        arguments: hadeth
         );
       },
       child: Container(
           alignment: Alignment.center,
           padding: EdgeInsets.all(8),
-          child: Text(title,
+          child: Text(hadeth.title,
               style: TextStyle(color: Theme.of(context).colorScheme.onPrimary,
                   fontSize: 25
               )
