@@ -1,14 +1,15 @@
 {
   "islamiTitle": "Islami",
   "quran": "Quran",
-  "tsbeh": "Tsbeh",
+  "sebha": "Sebha",
   "radio": "Radio",
   "settings": "Setting",
-  "ahadeth": "Ahadeth",
+  "hadeth": "Hadeth",
   "sebha_counter": "Tsbeh Counter",
   "language": "Language",
   "theme": "Theme",
   "light": "Light",
-  "dark": "Dark"
+  "dark": "Dark",
+  "soura_name": "Soura Name"
 
 }

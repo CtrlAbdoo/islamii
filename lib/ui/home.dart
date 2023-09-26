@@ -6,6 +6,7 @@ import 'package:islami/radio/RadioTab.dart';
 import 'package:islami/sebha/SebhaTab.dart';
 import 'package:islami/settings/SettingsTab.dart';
 import 'package:islami/ui/MyThemeDat.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class home extends StatefulWidget {
   static const String routeName = 'home';
@@ -26,8 +27,8 @@ class _homeState extends State<home> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text('Islami', style: TextStyle(
-          color: Theme.of(context).colorScheme.onPrimary
+        title: Text(AppLocalizations.of(context)!.islamiTitle, style: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimary
         ),),
       ),
       bottomNavigationBar: BottomNavigationBar(
@@ -42,23 +43,23 @@ class _homeState extends State<home> {
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: ImageIcon(AssetImage('assets/images/iconquran.png')),
-              label: 'Quran'),
+              label: AppLocalizations.of(context)!.quran),
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: ImageIcon(AssetImage('assets/images/icon_hadeth@3x.png')),
-              label: 'Hadeth'),
+              label: AppLocalizations.of(context)!.hadeth),
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: ImageIcon(AssetImage('assets/images/icon_sebha@3x.png')),
-              label: 'Sebha'),
+              label: AppLocalizations.of(context)!.sebha),
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: ImageIcon(AssetImage('assets/images/icon_radio@3x.png')),
-              label: 'Radio'),
+              label: AppLocalizations.of(context)!.radio),
           BottomNavigationBarItem(
               backgroundColor: Theme.of(context).primaryColor,
               icon: Icon(Icons.settings),
-              label: 'Settings'),
+              label: AppLocalizations.of(context)!.settings),
         ],
       ),
       body: Stack(
