@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:islami/ChapterDetails/ChapterDetailsScreen.dart';
 
 class VerseWidget extends StatelessWidget {
   String content;
@@ -15,7 +14,7 @@ class VerseWidget extends StatelessWidget {
         child: Text('$content {${index+1}}',
             textDirection: TextDirection.rtl,
             textAlign: TextAlign.center,
-            style: TextStyle(color: Color(0xFFFACC1D),
+            style: TextStyle(color: Theme.of(context).colorScheme.secondary,
                 fontSize: 20
             )
         )
