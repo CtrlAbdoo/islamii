@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/hadeth/Hadeth.dart';
 import 'package:islami/hadeth/HadethTitleWidget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethTab extends StatefulWidget {
   @override
@@ -26,21 +27,21 @@ class _HadethTabState extends State<HadethTab> {
             decoration: BoxDecoration(
                 border: Border.symmetric(
                     horizontal:
-                        BorderSide(color: Color(0xFFFACC1D), width: 2))),
+                        BorderSide(color: Theme.of(context).colorScheme.onSecondary, width: 2))),
             child: Text(
-              'Hadeth',
-              style: TextStyle(color: Color(0xFFF8F8F8), fontSize: 25),
+              AppLocalizations.of(context)!.hadeth,
+              style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontSize: 25),
             )),
         Expanded(
           flex: 3,
           child:
-          allAhadeth.isEmpty? Center(child: CircularProgressIndicator(color: Color(0xFFFACC1D),))
+          allAhadeth.isEmpty? Center(child: CircularProgressIndicator(color: Theme.of(context).colorScheme.secondary,))
           : ListView.separated(
               itemBuilder: (context, index) {
                 return HadethTitleWidget(allAhadeth[index]);
               },
               separatorBuilder: (context, index) => Container(
-                    color: Color(0xFFFACC1D),
+                    color: Theme.of(context).colorScheme.onSecondary,
                     width: double.infinity,
                     height: 2,
                     margin: EdgeInsets.symmetric(horizontal: 64),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/ui/ChapterDetails/VerseWidget.dart';
+import 'package:islami/ui/MyThemeDat.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
   static const String routeName = 'ChapterDetailsScreen';
@@ -17,18 +18,23 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
     if(verses.isEmpty)
       loadFile(args.index);
     return Container(
-      decoration: const BoxDecoration(
-        image: DecorationImage(image: AssetImage('assets/images/darkbg.png'))
+      decoration:  BoxDecoration(
+        image: DecorationImage(image: AssetImage(
+            MyThemeData.isDarkEnabled?
+        'assets/images/bg.jpg':
+        'assets/images/bg3.jpg'))
       ),
         child: Scaffold(
           appBar: AppBar(
-            title: Text(args.title),
+            title: Text(args.title ,style: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimary
+            ),),
           ),
           body: verses.isEmpty?
-          Center(child: CircularProgressIndicator(color: Color(0xFFFACC1D),))
+          Center(child: CircularProgressIndicator(color: Theme.of(context).colorScheme.secondary,))
               : Card(
                 elevation: 18,
-            color: Color(0xFF141A2E),
+            //color: Theme.of(context).colorScheme.surface,
                 margin: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(18)

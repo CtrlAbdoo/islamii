@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami/ui/MyThemeDat.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class SebhaTab extends StatefulWidget {
   @override
@@ -35,7 +38,9 @@ class _SebhaTabState extends State<SebhaTab> {
                   left: 50,
                 ),
                 child: Image.asset(
-                  'assets/images/head_sebha_dark.png',
+                    MyThemeData.isDarkEnabled?
+                    'assets/images/head_sebha_dark.png':
+                    'assets/images/head_sebha.png'
                 ),
               ),
             ),
@@ -51,7 +56,11 @@ class _SebhaTabState extends State<SebhaTab> {
                   },
                   child: Transform.rotate(
                     angle: _rotationAngle * (3.14159265359 / 180),
-                    child: Image.asset('assets/images/body_sebha_dark.png'),
+                    child: Image.asset(
+                        MyThemeData.isDarkEnabled?
+                        'assets/images/body_sebha_dark.png':
+                        'assets/images/body_sebha.png'
+                    ),
                   ),
                 ),
               ),
@@ -61,8 +70,8 @@ class _SebhaTabState extends State<SebhaTab> {
         SizedBox(
           height: 20,
         ),
-        Text("عدد التسبيحات",style: TextStyle(
-          color: Color(0xFFF8F8F8),
+        Text(AppLocalizations.of(context)!.sebha_counter,style: TextStyle(
+          color: Theme.of(context).colorScheme.onPrimary,
           fontSize: 25
         ),),
         SizedBox(
@@ -77,7 +86,7 @@ class _SebhaTabState extends State<SebhaTab> {
               borderRadius: BorderRadius.circular(25)),
           child:
           Text('$numSebha',style: TextStyle(
-              color: Color(0xFFF8F8F8),
+              color: Theme.of(context).colorScheme.onPrimary,
             fontSize: 25
           ),),
         ),
@@ -89,7 +98,7 @@ class _SebhaTabState extends State<SebhaTab> {
           width: 130,
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              color: Color(0xFFFACC1D),
+              color: Theme.of(context).colorScheme.onSecondary,
               borderRadius: BorderRadius.circular(25)),
           child:
           Text('$nameSebha',style: TextStyle(fontSize: 25),),
