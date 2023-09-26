@@ -132,10 +132,10 @@ class QuranTab extends StatelessWidget {
           padding: EdgeInsets.symmetric(vertical: 8),
           decoration: BoxDecoration(
               border: Border.symmetric(
-                  horizontal: BorderSide(color: Color(0xFFFACC1D), width: 2))),
+                  horizontal: BorderSide(color: Theme.of(context).colorScheme.onSecondary, width: 2))),
           child: Text(
             'Soura Name',
-            style: TextStyle(color: Color(0xFFF8F8F8), fontSize: 25),
+            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary, fontSize: 25),
           ),
         ),
         Expanded(
@@ -145,7 +145,7 @@ class QuranTab extends StatelessWidget {
                 return ChapterTitleWidget(names[index], index);
               },
               separatorBuilder: (context, index) => Container(
-                    color: Color(0xFFFACC1D),
+                    color: Theme.of(context).colorScheme.onSecondary,
                     width: double.infinity,
                     height: 2,
                     margin: EdgeInsets.symmetric(horizontal: 64),
