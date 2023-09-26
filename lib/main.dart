@@ -4,8 +4,6 @@ import 'package:islami/ui/MyThemeDat.dart';
 import 'package:islami/ui/hadethDetalies/hadethDetailesScreen.dart';
 import 'package:islami/ui/home.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:islami/ChapterDetails/ChapterDetailsScreen.dart';
-import 'package:islami/home.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
