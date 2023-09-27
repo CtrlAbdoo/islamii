@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class MyThemeData{
-  static bool isDarkEnabled = false;
+
  static ThemeData darkTheme = ThemeData(
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: Color(0xFFFACC1D),

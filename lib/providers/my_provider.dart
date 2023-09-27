@@ -1,26 +1,34 @@
 import 'package:flutter/material.dart';
 
-class MyProviderApp extends ChangeNotifier{
+class My_Provider extends ChangeNotifier {
+  String currentLocale = 'en';
+  ThemeMode currentTheme = ThemeMode.light;
 
-  String AppLanguage='en';
-  ThemeMode themeMode=ThemeMode.light;
-
-  void changeLanguage(String languageCode){
-    AppLanguage=languageCode;
+  void changeLocale(String newLocale) {
+    if (newLocale == currentLocale) return;
+    currentLocale = newLocale;
     notifyListeners();
   }
 
-  void changeTheme(ThemeMode theme){
-    themeMode=theme;
+  void changeTheme(ThemeMode newTheme) {
+    if (newTheme == currentTheme) return;
+    currentTheme = newTheme;
     notifyListeners();
   }
 
-  String getBackground(){
-    if(themeMode==ThemeMode.light){
-      return 'assets/images/main_bg.png';
-    }else{
-      return 'assets/images/main_dark_bg.png';
+  String getBackground() {
+    if (currentTheme == ThemeMode.light) {
+      return 'assets/images/bg3.jpg';
+    } else {
+      return 'assets/images/bg.jpg';
     }
+  }
 
+  bool isDarkEnabled() {
+    return currentTheme == ThemeMode.dark;
+  }
+
+  bool isEnglishEnabled() {
+    return currentLocale == 'en';
   }
 }

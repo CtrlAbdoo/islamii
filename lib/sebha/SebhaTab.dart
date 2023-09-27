@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:islami/providers/my_provider.dart';
 import 'package:islami/ui/MyThemeDat.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 
 class SebhaTab extends StatefulWidget {
@@ -27,6 +29,7 @@ class _SebhaTabState extends State<SebhaTab> {
 
   @override
   Widget build(BuildContext context) {
+    My_Provider my_provider = Provider.of<My_Provider>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
@@ -38,7 +41,7 @@ class _SebhaTabState extends State<SebhaTab> {
                   left: 50,
                 ),
                 child: Image.asset(
-                    MyThemeData.isDarkEnabled?
+                    my_provider.currentTheme == ThemeMode.dark?
                     'assets/images/head_sebha_dark.png':
                     'assets/images/head_sebha.png'
                 ),
@@ -57,7 +60,7 @@ class _SebhaTabState extends State<SebhaTab> {
                   child: Transform.rotate(
                     angle: _rotationAngle * (3.14159265359 / 180),
                     child: Image.asset(
-                        MyThemeData.isDarkEnabled?
+                        my_provider.currentTheme == ThemeMode.dark?
                         'assets/images/body_sebha_dark.png':
                         'assets/images/body_sebha.png'
                     ),
