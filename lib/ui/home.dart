@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islami/hadeth/HadethTab.dart';
+import 'package:islami/providers/my_provider.dart';
 import 'package:islami/quran/QuranTab.dart';
 import 'package:islami/radio/RadioTab.dart';
 import 'package:islami/sebha/SebhaTab.dart';
 import 'package:islami/settings/SettingsTab.dart';
-import 'package:islami/ui/MyThemeDat.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 class home extends StatefulWidget {
   static const String routeName = 'home';
@@ -20,6 +21,7 @@ class _homeState extends State<home> {
 
   @override
   Widget build(BuildContext context) {
+    My_Provider my_provider = Provider.of<My_Provider>(context);
     SystemChrome.setEnabledSystemUIMode(
       SystemUiMode.immersiveSticky,
       overlays: [SystemUiOverlay.bottom],
@@ -67,9 +69,7 @@ class _homeState extends State<home> {
         children: [
           Image(
             image: AssetImage(
-                MyThemeData.isDarkEnabled?
-                'assets/images/bg.jpg':
-                'assets/images/bg3.jpg'
+                my_provider.getBackground()
             ),
             fit: BoxFit.fill,
           ),
