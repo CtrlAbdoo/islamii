@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/providers/my_provider.dart';
 import 'package:islami/ui/MyThemeDat.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
@@ -41,7 +42,7 @@ class _SebhaTabState extends State<SebhaTab> {
                   left: 50,
                 ),
                 child: Image.asset(
-                    my_provider.currentTheme == ThemeMode.dark?
+                    my_provider.isDarkEnabled()?
                     'assets/images/head_sebha_dark.png':
                     'assets/images/head_sebha.png'
                 ),
@@ -60,7 +61,7 @@ class _SebhaTabState extends State<SebhaTab> {
                   child: Transform.rotate(
                     angle: _rotationAngle * (3.14159265359 / 180),
                     child: Image.asset(
-                        my_provider.currentTheme == ThemeMode.dark?
+                        my_provider.isDarkEnabled()?
                         'assets/images/body_sebha_dark.png':
                         'assets/images/body_sebha.png'
                     ),
@@ -73,10 +74,10 @@ class _SebhaTabState extends State<SebhaTab> {
         SizedBox(
           height: 20,
         ),
-        Text(AppLocalizations.of(context)!.sebha_counter,style: TextStyle(
+        Text(AppLocalizations.of(context)!.sebha_counter,style:GoogleFonts.elMessiri (textStyle: TextStyle(
           color: Theme.of(context).colorScheme.onPrimary,
           fontSize: 25
-        ),),
+        )),),
         SizedBox(
           height: 20,
         ),
@@ -88,10 +89,10 @@ class _SebhaTabState extends State<SebhaTab> {
               color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(25)),
           child:
-          Text('$numSebha',style: TextStyle(
+          Text('$numSebha',style: GoogleFonts.elMessiri(textStyle: TextStyle(
               color: Theme.of(context).colorScheme.onPrimary,
             fontSize: 25
-          ),),
+          )),),
         ),
         SizedBox(
           height: 20,
@@ -104,8 +105,8 @@ class _SebhaTabState extends State<SebhaTab> {
               color: Theme.of(context).colorScheme.onSecondary,
               borderRadius: BorderRadius.circular(25)),
           child:
-          Text('$nameSebha',style: TextStyle(fontSize: 25),),
-        ),
+          Text('$nameSebha',style: GoogleFonts.elMessiri(textStyle: TextStyle(fontSize: 25),),
+        )),
       ],
     );
   }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/hadeth/HadethTab.dart';
 import 'package:islami/providers/my_provider.dart';
 import 'package:islami/quran/QuranTab.dart';
@@ -29,8 +30,8 @@ class _homeState extends State<home> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
-        title: Text(AppLocalizations.of(context)!.islamiTitle, style: TextStyle(
-            color: Theme.of(context).colorScheme.onPrimary
+        title: Text(AppLocalizations.of(context)!.islamiTitle, style: GoogleFonts.elMessiri(textStyle: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimary)
         ),),
       ),
       bottomNavigationBar: BottomNavigationBar(

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/providers/my_provider.dart';
 import 'package:islami/ui/ChapterDetails/VerseWidget.dart';
-import 'package:islami/ui/MyThemeDat.dart';
 import 'package:provider/provider.dart';
 
 class ChapterDetailsScreen extends StatefulWidget {
@@ -33,9 +33,9 @@ class _ChapterDetailsScreenState extends State<ChapterDetailsScreen> {
       ),
         child: Scaffold(
           appBar: AppBar(
-            title: Text(args.title ,style: TextStyle(
+            title: Text(args.title ,style:GoogleFonts.elMessiri (textStyle: TextStyle(
               color: Theme.of(context).colorScheme.onPrimary
-            ),),
+            )),),
           ),
           body: verses.isEmpty?
           Center(child: CircularProgressIndicator(color: Theme.of(context).colorScheme.secondary,))
