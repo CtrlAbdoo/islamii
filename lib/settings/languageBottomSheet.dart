@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/providers/my_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -45,10 +46,10 @@ class _languageBottomSheetState extends State<languageBottomSheet> {
           children: [
             Text(
               txt,
-              style: TextStyle(
+              style: GoogleFonts.elMessiri(textStyle: TextStyle(
                   color: Theme.of(context).colorScheme.onSecondary,
                   fontSize: 24),
-            ),
+            )),
           ],
         ),
         Icon(
@@ -64,9 +65,9 @@ class _languageBottomSheetState extends State<languageBottomSheet> {
       children: [
         Text(
           txt,
-          style: TextStyle(
+          style: GoogleFonts.elMessiri(textStyle: TextStyle(
               color: Theme.of(context).colorScheme.onPrimary, fontSize: 24),
-        ),
+        )),
       ],
     );
   }

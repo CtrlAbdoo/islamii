@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/hadeth/Hadeth.dart';
 import 'package:islami/providers/my_provider.dart';
 import 'package:islami/ui/MyThemeDat.dart';
@@ -23,8 +24,8 @@ class hadethDetailesScreen extends StatelessWidget {
         ),
         child: Scaffold(
             appBar: AppBar(
-              title: Text(args.title, style: TextStyle(
-                  color: Theme.of(context).colorScheme.onPrimary
+              title: Text(args.title, style: GoogleFonts.elMessiri(textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.onPrimary)
             ),),
             ),
             body: Column(
@@ -40,7 +41,7 @@ class hadethDetailesScreen extends StatelessWidget {
                       child: Text(args.content,
                           textDirection: TextDirection.rtl,
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: Theme.of(context).colorScheme.secondary, fontSize: 20)),
+                          style: GoogleFonts.elMessiri(textStyle: TextStyle(color: Theme.of(context).colorScheme.secondary, fontSize: 20))),
                     ),
                   ),
                 ),

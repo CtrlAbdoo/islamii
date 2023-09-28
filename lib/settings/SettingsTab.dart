@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:islami/providers/my_provider.dart';
 import 'package:islami/settings/ThemeBottomSheet.dart';
 import 'package:islami/settings/languageBottomSheet.dart';
@@ -23,8 +24,8 @@ class _SettingsTabState extends State<SettingsTab> {
         children: [
           Text(
             AppLocalizations.of(context)!.theme,
-            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
-          ),
+            style: GoogleFonts.elMessiri(textStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+          )),
           InkWell(
             onTap: () {
               showThemeBottomSheet();
@@ -40,18 +41,18 @@ class _SettingsTabState extends State<SettingsTab> {
                   my_provider.isDarkEnabled()
                       ? AppLocalizations.of(context)!.dark
                       : AppLocalizations.of(context)!.light,
-                  style: TextStyle(
+                  style: GoogleFonts.elMessiri(textStyle: TextStyle(
                       color: Theme.of(context).colorScheme.onPrimary,
                       fontSize: 18),
-                )),
+                ))),
           ),
           SizedBox(
             height: 18,
           ),
           Text(
             AppLocalizations.of(context)!.language,
-            style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
-          ),
+            style: GoogleFonts.elMessiri(textStyle: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+          )),
           InkWell(
             onTap: () {
               showLanguageBottomSheet();
@@ -66,9 +67,9 @@ class _SettingsTabState extends State<SettingsTab> {
                 child: Text(
                   my_provider.isEnglishEnabled()?
                   'English':'العربيه',
-                  style: TextStyle(
+                  style: GoogleFonts.elMessiri(textStyle: TextStyle(
                       color: Theme.of(context).colorScheme.onPrimary,
-                      fontSize: 18),
+                      fontSize: 18)),
                 )),
           )
         ],
