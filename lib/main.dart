@@ -8,9 +8,12 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  var provider = My_Provider();
+  await provider.loadThemeMode();
   runApp(ChangeNotifierProvider(
-      create: (buildContext)=>My_Provider(),
+      create: (buildContext)=>provider,
       child: const MyApp()));
 }
 
