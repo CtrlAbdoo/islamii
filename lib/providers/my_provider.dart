@@ -10,6 +10,7 @@ class My_Provider extends ChangeNotifier {
     if (newLocale == currentLocale) return;
     currentLocale = newLocale;
     notifyListeners();
+    saveLocale(newLocale);
   }
 
   void changeTheme(ThemeMode newTheme) {
@@ -49,6 +50,22 @@ class My_Provider extends ChangeNotifier {
     String? oldTheme = getTheme();
     if(oldTheme!=null){
       currentTheme = oldTheme == 'dark' ? ThemeMode.dark : ThemeMode.light;
+    }
+  }
+
+  Future<void> saveLocale(String newLocale) async {
+    String newLocaleData = newLocale == 'en' ? 'en' : 'ar';
+    await sharedPreferences!.setString('Locale', newLocaleData);
+  }
+
+  String? getLocale(){
+    return sharedPreferences?.getString('Locale');
+  }
+  Future<void> loadLocale() async {
+    sharedPreferences = await SharedPreferences.getInstance();
+    String? oldLocale = await getLocale();
+    if (oldLocale != null) {
+      currentLocale = oldLocale == 'en' ? 'en' : 'ar';
     }
   }
 }
