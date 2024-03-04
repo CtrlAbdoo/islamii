@@ -11,6 +11,7 @@ class My_Provider extends ChangeNotifier {
     currentLocale = newLocale;
     notifyListeners();
     saveLocale(newLocale);
+    currentLocale = newLocale;
   }
 
   void changeTheme(ThemeMode newTheme) {
